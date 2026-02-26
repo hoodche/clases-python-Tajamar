@@ -1,4 +1,6 @@
 import random
+import interface
+from typing import Optional
 
 class Dado:
     def __init__(self, caras: int):
@@ -15,9 +17,12 @@ def crear_dado() -> Dado:
     print(f"Has creado un dado con {caras} caras")
     return dado
     
-def lanzar_dado(dado: Dado) -> int:
+def lanzar_dado(dado: Optional[Dado]) -> int:
     global contador
-    print(f"\nLanzamiento {contador}")
-    contador += 1
-    resultado = dado.tirar_dado()
-    print(f"Lanzando dado de {dado.ultima_cara} es {resultado}")
+    if dado:
+        print(f"\nLanzamiento {contador}")
+        contador += 1
+        resultado = dado.tirar_dado()
+        print(f"Lanzando dado de {dado.ultima_cara} es {resultado}")
+    else:
+        print(interface.TEXTO_ERROR_NO_DADO)
