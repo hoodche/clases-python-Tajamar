@@ -17,7 +17,7 @@ def crear_dado() -> Dado:
     
 def lanzar_dado(dado: Dado) -> int:
     global contador
-    print(f"Lanzamiento {contador}")
+    print(f"\nLanzamiento {contador}")
     contador += 1
     resultado = dado.tirar_dado()
-    print(f"Lanzando dado de {dado.ultima_cara} es {resultado}\n")
+    print(f"Lanzando dado de {dado.ultima_cara} es {resultado}")
