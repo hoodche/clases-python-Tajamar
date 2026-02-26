@@ -1,7 +1,3 @@
-# Queremos simular una tirada de un dado de 6 caras
+from tools import tirar_dado
 
-import random
-
-dado = [1, 2, 3, 4, 5, 6]  # caras
-tirada = random.choice(dado)  # escojo una cara de mis caras
-print(tirada)
+print(tirar_dado())
