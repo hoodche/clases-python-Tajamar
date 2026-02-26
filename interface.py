@@ -1,4 +1,4 @@
-from tools import tirar_dado
+from tools import Dado
 
 TEXTO_INICIO = "Vas a lanzar un dado"
 TEXTO_FINAL = "Cerrando programa..."
@@ -9,6 +9,7 @@ def interfaz():
     global contador
     print(f"Lanzamiento {contador}")
     caras = int(input("Dime las caras del dado que quieres lanzar: "))
-    resultado = tirar_dado(caras)
+    dado = Dado(caras)
+    resultado = dado.tirar_dado()
     print(f"El resultado de tirar un dado de {caras} caras es {resultado}")
     contador += 1

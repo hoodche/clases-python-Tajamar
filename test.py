@@ -1,10 +1,11 @@
-from tools import tirar_dado
+from tools import Dado
 
 def test_tirar_muchos_dados(numero_caras: int):
+    dado = Dado(numero_caras)
     lista_resultados = []
     print(f"Test con {numero_caras} caras")
     for _ in range(10000):
-        lista_resultados.append(tirar_dado(numero_caras))
+        lista_resultados.append(dado.tirar_dado())
 
     for resultado in lista_resultados:
         if 0 < resultado < numero_caras + 1:
